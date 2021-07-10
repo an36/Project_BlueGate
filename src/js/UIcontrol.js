@@ -66,7 +66,8 @@ function addOptionalServs(){
             }
         }
         else{
-            options.optionalServices.pop(temp);
+            let tempIndex = options.optionalServices.indexOf(temp);
+            options.optionalServices.splice(tempIndex,1);
             document.getElementById(temp).remove();
             addRmServsbtn.innerHTML="Add";
         }

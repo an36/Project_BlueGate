@@ -1,7 +1,7 @@
-let BLEdevice = new Array();
-let dev_name = new Array();
-let BLEChars = new Array();
-let BLEvals = new Array();
+let BLEdevice = new Array(5);
+let dev_name = new Array(5);
+let BLEChars = new Array(5);
+let BLEvals = new Array(5);
 let conn_devs = 0;
 let selectedDevID;
 let dup_dev = false;
@@ -46,16 +46,16 @@ function scanBLE(){
         })
         .then(characteristics =>{
             console.log(characteristics);
+            addTermTab(dev_name[conn_devs-1], BLEdevice[conn_devs-1].id);
             for(let i=0; i<characteristics.length; i++){
                 BLEChars[conn_devs-1] = characteristics[i];
                 return BLEChars[conn_devs-1].startNotifications().then(_=>{
                     // console.log('> Notifications started');
                     BLEChars[conn_devs-1].addEventListener('characteristicvaluechanged', BLEread,true);   //triggers BLEread if data received
-                    addTermTab(dev_name[conn_devs-1], BLEdevice[conn_devs-1].id);
                     // console.log(conn_devs);
                 }).catch(e=>{
                     if(BLEdevice[conn_devs-1].gatt.connected){
-                        alert("Connection Failure (Char failure): "+e.message);
+                        alert("Characteristic Failure: "+e.message+"\n\nTry adding the desired device's UUID (i.e., 0x1234 or generic_attribute)");
                         BLEdevice[conn_devs-1].gatt.disconnect();
                         // onDisconnect(BLEdevice[conn_devs-1].id,1);
                     }
