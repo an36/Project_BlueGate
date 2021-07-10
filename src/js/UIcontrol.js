@@ -5,7 +5,6 @@ let connbtn = document.getElementById("connbtn");
 connbtn.onclick = scanBLE;
 
 let discobtn = document.getElementById("discobtn");
-// discobtn.onclick = function(){onDisconnect(selectedDevID)};
 discobtn.onclick = function(){disconnectBtn(selectedDevID)};
 
 let ServsInput = document.getElementById("ServsInput");

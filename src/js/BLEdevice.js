@@ -17,6 +17,7 @@ function scanBLE(){
         let tempDev;
         navigator.bluetooth.requestDevice(options)
         .then(device => { 
+            
             for(let i=0; i<conn_devs; i++){
                 if(BLEdevice[i].id==device.id){
                     alert("Device already connected");
