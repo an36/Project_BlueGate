@@ -53,7 +53,7 @@ function rmTermTab(device_id){
 function addOptionalServs(){
     if(ServsInput.value.length>0){
         let temp = ServsInput.value;
-        console.log(temp);
+        // console.log(temp);
 
         if(addRmServsbtn.innerHTML=="Add"){
             if(ServsInput.value.startsWith('0x')){
@@ -74,7 +74,7 @@ function addOptionalServs(){
     }
 
     ServsInput.value = "";
-    console.log(options.optionalServices);
+    // console.log(options.optionalServices);
 }
 
 function rmOptionalServs(){
