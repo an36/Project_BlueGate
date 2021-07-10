@@ -69,6 +69,16 @@ function scanBLE(){
             }
             else{
                 if(error.message!="User cancelled the requestDevice() chooser."){
+                    if(error.message.includes("Invalid Service name")){
+                        let startIndex = error.message.indexOf("Invalid Service name:");
+                        let endIndex = error.message.indexOf("'. It")+1;
+                        let tempMsg = "";
+                        for(let i=startIndex; i<startIndex+(endIndex-startIndex); i++){
+                            tempMsg+=error.message[i];
+                        }
+                        alert(tempMsg+"\nTry removing or changing the UUID(s) causing the error");
+                        return;
+                    }
                     if(tempDev){
                         console.log("in connect catch");
                         alert("Connection Failure: "+error.message);
