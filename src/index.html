@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <script type="text/javascript" defer src="/js/BLEdevice.js"></script>
+    <script type="text/javascript" defer src="/js/UIcontrol.js"></script>
+    <title>Project BlueGate</title>
+</head>
+<body>
+    <a id="title">Project BlueGate</a><br><br>
+    <input id="ServsInput" list="optionalServs" name="optionalServs" placeholder="Bluetooth Services (e.g. generic_access, 0x1234)">
+    <datalist id="optionalServs">
+        <option id="generic_access" value="generic_access">
+    </datalist>
+    <button id="addRmServsbtn">Add</button>
+    <button id="connbtn">Connect</button>
+    <button id="discobtn">Disonnect</button><br><br>
+    <div class="tab" id="tab">
+        <button id="tabbtn0">All</button>
+    </div>
+    <!-- <textarea readonly name="terminal1" id="terminal1" cols="50" rows="20">okay&#10;ok&#10;foo</textarea><br> -->
+    <textarea readonly name="terminal1" id="terminal1" cols="50" rows="20"></textarea><br>
+    <input type="text" id="sendtext"> <button id="sendbtn">Send</button>
+
+    
+</body>
+</html>
