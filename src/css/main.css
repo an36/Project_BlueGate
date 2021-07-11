@@ -1,6 +1,17 @@
+:root{
+    --columnPadding: 3px;
+}
+
+*{
+    box-sizing: border-box;
+    /* height: 100vh; */
+}
+
 body{
     margin: 0;
-    background-color: #ececfd;
+    background-color: #ececfd; 
+    height: 100%;   
+    /* overflow: hidden; */
 }
 
 .topNavBar{
@@ -44,13 +55,43 @@ body{
     z-index: 2;
 }
 
+.column1{
+    float: left;
+    width: 20%;
+    height: 100%;
+    padding: var(--columnPadding);
+}
+.column2{
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: var(--columnPadding);
+}
+.column3{
+    float: left;
+    width: 30%;
+    height: 100%;
+    padding: var(--columnPadding);
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .devlist{
     display: flex;
+    position: relative;
     /* border: 1px solid black; */
-    height: 100px;
-    width: 100px;
+    height: calc(100vh - 30vh);
+    width: 100%;
 }
 
 .tab{
     display: flex;
+}
+
+.terminal{
+    width: 100%;
+    height: calc(100vh - 36.44vh);
 }

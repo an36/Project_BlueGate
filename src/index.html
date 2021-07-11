@@ -23,16 +23,26 @@
     <button id="addRmServsbtn">Add</button>
     <button id="connbtn">Connect</button>
     <button id="discobtn">Disonnect</button><br><br>
-    <div class="devlist boxes" id="devlist">
 
+    <div class="row">
+        <div class="column1" style="background-color:#aaa;">
+            <div class="devlist boxes" id="devlist"></div>
+        </div>
+
+        <div class="column2" style="background-color:#bbb;">
+            <div class="tab" id="tab">
+                <button id="tabbtn0">All</button>
+            </div>
+            <!-- <textarea class="boxes" readonly name="terminal1" id="terminal1" cols="50" rows="20"></textarea><br> -->
+            <textarea class="boxes terminal" readonly name="terminal1" id="terminal1"></textarea><br>
+            <input type="text" id="sendtext" class="boxes"> <button id="sendbtn">Send</button>
+        </div>
+        
+        <div class="column3" style="background-color:#ccc;">
+            
+        </div>
     </div>
-    <div class="tab" id="tab">
-        <button id="tabbtn0">All</button>
-    </div>
+
     <!-- <textarea readonly name="terminal1" id="terminal1" cols="50" rows="20">okay&#10;ok&#10;foo</textarea><br> -->
-    <textarea class="boxes" readonly name="terminal1" id="terminal1" cols="50" rows="20"></textarea><br>
-    <input type="text" id="sendtext"> <button id="sendbtn">Send</button>
-
-    
 </body>
 </html>
