@@ -1,14 +1,54 @@
+body{
+    margin: 0;
+    background-color: #ececfd;
+}
+
+.topNavBar{
+    display: flex;
+    position: relative;
+    background-color:rgb(77, 58, 250);
+    /* border: 1px solid black; */
+    overflow: hidden;
+    z-index: 0;
+    height: 9vh;
+    justify-content: center;
+    /* box-shadow: 0px 4px 7.5px grey; */
+    box-shadow: rgb(38, 57, 77) 0px 8px 30px -5px;  
+}
+
 #title{
-    font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 25px;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 30px;
     letter-spacing: 2px;
     word-spacing: 2px;
-    color: #000000;
+    color: #fdfced;
     font-weight: 700;
     text-decoration: none;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
+    text-shadow: -1.5px -1px 3px #fff6b2;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 1;
+}
+
+.boxes{
+    border: 1.7px solid rgba(0, 0, 0, 0.301);
+    border-radius: 6px;
+    /* box-shadow: 10px 10px 10px 10px ; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    z-index: 2;
+}
+
+.devlist{
+    display: flex;
+    /* border: 1px solid black; */
+    height: 100px;
+    width: 100px;
 }
 
 .tab{

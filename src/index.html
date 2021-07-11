@@ -10,19 +10,27 @@
     <title>Project BlueGate</title>
 </head>
 <body>
-    <a id="title">Project BlueGate</a><br><br>
-    <input id="ServsInput" list="optionalServs" name="optionalServs" placeholder="Bluetooth Services (e.g. generic_access, 0x1234)">
+    <div class="topNavBar" id="topNavBar">
+        <a id="title">Project BlueGate</a>
+    </div>
+    
+    <br><br>
+
+    <input class="boxes" id="ServsInput" list="optionalServs" name="optionalServs" placeholder="Bluetooth Services (e.g. generic_access, 0x1234)">
     <datalist id="optionalServs">
         <option id="generic_access" value="generic_access">
     </datalist>
     <button id="addRmServsbtn">Add</button>
     <button id="connbtn">Connect</button>
     <button id="discobtn">Disonnect</button><br><br>
+    <div class="devlist boxes" id="devlist">
+
+    </div>
     <div class="tab" id="tab">
         <button id="tabbtn0">All</button>
     </div>
     <!-- <textarea readonly name="terminal1" id="terminal1" cols="50" rows="20">okay&#10;ok&#10;foo</textarea><br> -->
-    <textarea readonly name="terminal1" id="terminal1" cols="50" rows="20"></textarea><br>
+    <textarea class="boxes" readonly name="terminal1" id="terminal1" cols="50" rows="20"></textarea><br>
     <input type="text" id="sendtext"> <button id="sendbtn">Send</button>
 
     
