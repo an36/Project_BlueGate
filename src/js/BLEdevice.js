@@ -33,7 +33,7 @@ function scanBLE(){
             dev_name[conn_devs] = device.name;
             BLEvals[conn_devs] = "";
             conn_devs++;
-    
+            
             return device.gatt.connect();
         })
         .then(server => {/*console.log(server.device);*/ return server.getPrimaryServices();})
@@ -45,7 +45,8 @@ function scanBLE(){
             }
         })
         .then(characteristics =>{
-            console.log(characteristics);
+            // console.log(characteristics);
+            updateDevList(1, tempDev, characteristics[0]);
             let addedTerm = false;
             for(let i=0; i<characteristics.length; i++){
                 BLEChars[conn_devs-1] = characteristics[i];
@@ -108,6 +109,9 @@ function onDisconnect(dev_id,error=0){
     if(conn_devs>0){
         for(let i=0; i<conn_devs; i++){
             if(BLEdevice[i].id==dev_id){
+                rmTermTab(dev_id);
+                updateDevList(0,BLEdevice[i]);
+
                 BLEdevice.splice(i,1);
                 BLEChars.splice(i,1);
                 BLEvals.splice(i,1);
@@ -117,13 +121,14 @@ function onDisconnect(dev_id,error=0){
                 if(!error){
                     alert("Device just got disconnected");
                 }
-                rmTermTab(dev_id);
             }
         }
     }
 }
 
-function disconnectBtn(dev_id){
+function disconnectBtn(e){
+    e = e || window.event;
+    let dev_id = e.name;
     for(let i=0; i<conn_devs; i++){
         if(BLEdevice[i].id==dev_id){
             console.log(BLEdevice[i].id);

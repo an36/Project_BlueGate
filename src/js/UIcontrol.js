@@ -4,9 +4,6 @@
 let connbtn = document.getElementById("connbtn");
 connbtn.onclick = scanBLE;
 
-let discobtn = document.getElementById("discobtn");
-discobtn.onclick = function(){disconnectBtn(selectedDevID)};
-
 let ServsInput = document.getElementById("ServsInput");
 ServsInput.oninput = rmOptionalServs;
 
@@ -21,6 +18,8 @@ sendtext.addEventListener("keyup",function(e){
         sendBLE();
     }
 });
+
+let devlistInner = document.getElementById("devlistInner");
 
 let terminalTabs = document.getElementById("tab");
 
@@ -103,4 +102,40 @@ function terminalLog(sending=0,term_id, curr_time, curr_dev_name,val){
         curr_teminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
     }
     curr_teminal.scrollTop = curr_teminal.scrollHeight;
+}
+
+function updateDevList(add=0,BLEdev, BLEchar){
+    let curr_properties = "";
+    // console.log(BLEdev.id);
+    // console.log(BLEdev.name);
+    // console.log(BLEchar.properties);
+
+    if(add){
+        if(BLEchar.properties.read){
+            curr_properties += "Read";
+        }
+        if(BLEchar.properties.write){
+            if(curr_properties.length > 0){
+                curr_properties += ", ";
+            }
+            curr_properties += "Write";
+        }
+        if(BLEchar.properties.notify){
+            if(curr_properties.length > 0){
+                curr_properties += ", ";
+            }
+            curr_properties += "Notify";
+        }
+    
+        devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/assets/Red-incorrect-icon-button-on-transparent-background-PNG-1.png\" width=\"17\" height=\"17\"></b><br>Properties: "+curr_properties+"<br><br></a>";
+    }
+    else{
+        if(BLEdev){
+            let dev_element = document.getElementsByClassName(BLEdev.id);
+            while(dev_element.length>0){
+                dev_element[0].parentNode.removeChild(dev_element[0]);
+            }
+        }
+    }
+
 }
