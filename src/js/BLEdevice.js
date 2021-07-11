@@ -166,8 +166,10 @@ async function BLEread(event){
         let this_dev_index;
 
         for(let i=0; i<conn_devs; i++){
-            if(BLEChars[i].service.device.id==this_dev_id){
-                this_dev_index = i;
+            if(BLEChars[i]){
+                if(BLEChars[i].service.device.id==this_dev_id){
+                    this_dev_index = i;
+                }
             }
         }
 
