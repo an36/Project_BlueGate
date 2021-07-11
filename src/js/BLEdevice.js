@@ -36,9 +36,9 @@ function scanBLE(){
     
             return device.gatt.connect();
         })
-        .then(server => {console.log(server.device); return server.getPrimaryServices();})
+        .then(server => {/*console.log(server.device);*/ return server.getPrimaryServices();})
         .then(services => {
-            console.log(services);
+            // console.log(services);
     
             for(let i=0; i<services.length; i++){
                 return services[i].getCharacteristics();
@@ -46,21 +46,27 @@ function scanBLE(){
         })
         .then(characteristics =>{
             console.log(characteristics);
-            addTermTab(dev_name[conn_devs-1], BLEdevice[conn_devs-1].id);
+            let addedTerm = false;
             for(let i=0; i<characteristics.length; i++){
                 BLEChars[conn_devs-1] = characteristics[i];
-                return BLEChars[conn_devs-1].startNotifications().then(_=>{
-                    // console.log('> Notifications started');
-                    BLEChars[conn_devs-1].addEventListener('characteristicvaluechanged', BLEread,true);   //triggers BLEread if data received
-                    // console.log(conn_devs);
-                }).catch(e=>{
-                    if(BLEdevice[conn_devs-1].gatt.connected){
-                        alert("Characteristic Failure: "+e.message+"\n\nTry adding the desired device's UUID (i.e., 0x1234 or generic_attribute)");
-                        BLEdevice[conn_devs-1].gatt.disconnect();
-                        // onDisconnect(BLEdevice[conn_devs-1].id,1);
+                if(characteristics[i].properties.notify && characteristics[i].properties.write){
+                    if(!addedTerm){
+                        addTermTab(dev_name[conn_devs-1], BLEdevice[conn_devs-1].id);
+                        addedTerm=true;
                     }
-                    console.log("in char catch");
-                })
+                    return BLEChars[conn_devs-1].startNotifications().then(_=>{
+                        // console.log('> Notifications started');
+                        BLEChars[conn_devs-1].addEventListener('characteristicvaluechanged', BLEread,true);   //triggers BLEread if data received
+                        // console.log(conn_devs);
+                    }).catch(e=>{
+                        if(BLEdevice[conn_devs-1].gatt.connected){
+                            alert("Characteristic Failure: "+e.message+"\n\nTry adding the desired device's UUID (i.e., 0x1234 or generic_attribute)");
+                            BLEdevice[conn_devs-1].gatt.disconnect();
+                            // onDisconnect(BLEdevice[conn_devs-1].id,1);
+                        }
+                        console.log("in notification catch");
+                    })
+                }
             }
         })
         .catch(error => {
@@ -148,24 +154,25 @@ async function writeBLE(data){
  * scanned MAC addresses, and for x,y,z acceleration values.
  */
 async function BLEread(event){
-    var i,j;
+    let j;
+    // console.log(event);
     if(conn_devs>0){
         let this_dev_id = event.currentTarget.service.device.id;
         let this_dev_index;
+
         for(let i=0; i<conn_devs; i++){
-            if(BLEdevice[i].id==this_dev_id){
+            if(BLEChars[i].service.device.id==this_dev_id){
                 this_dev_index = i;
             }
         }
 
         BLEvals[this_dev_index] = "";
-
+        
         for(j=0; j<BLEChars[this_dev_index].value.byteLength; j++){    //read bytes from received value
-                BLEvals[this_dev_index] += String.fromCharCode(BLEChars[this_dev_index].value.getUint8(j)); //convert value to string
+            BLEvals[this_dev_index] += String.fromCharCode(BLEChars[this_dev_index].value.getUint8(j)); //convert value to string
         }
-
-        console.log(BLEvals[this_dev_index]);
+            
+        // console.log(BLEvals[this_dev_index]);
         terminalLog(0, "terminal1", new Date().toLocaleTimeString(), dev_name[this_dev_index], BLEvals[this_dev_index])
-        // console.log(event.currentTarget.service.device.id);
     }
 }
