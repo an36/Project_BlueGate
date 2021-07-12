@@ -1,5 +1,6 @@
 
 
+let selectedTermID = "AllTerminal";
 
 let connbtn = document.getElementById("connbtn");
 connbtn.onclick = scanBLE;
@@ -34,6 +35,7 @@ function showAllTerminal(){
         console.log(i);
     }
 
+    selectedTermID = "AllTerminal";
     AllTerminal.classList.remove("hidden");
 }
 
@@ -45,7 +47,7 @@ addRmServsbtn.onclick = addOptionalServs;
 function sendBLE(){
     if(sendtext.value.length>0){
         writeBLE(sendtext.value);
-        terminalLog(1, "terminal1", new Date().toLocaleTimeString(), "All", sendtext.value);
+        terminalLog(1, selectedTermID, new Date().toLocaleTimeString(), selectedTermID, sendtext.value);
         sendtext.value = "";
     }
 }
@@ -53,7 +55,7 @@ function sendBLE(){
 function addTermTab(device_name, device_id){
     terminalTabs.innerHTML+="<button id=\""+device_id+"\">"+device_name+"</button>";
     document.getElementById(device_id).onclick = function(){
-        selectedTermID=device_id;
+        selectedTermID=device_name;
         let TermWindowns = document.getElementsByClassName("terminal");
         let curr_TermWindow = document.getElementById(device_name);
 
@@ -131,8 +133,16 @@ function terminalLog(sending=0,term_id, curr_time, curr_dev_name,val){
         AllTerminal.innerHTML+= "["+curr_time+"] "+curr_dev_name+": "+val+"&#10;";
     }
     else{
-        curr_teminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
-        AllTerminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
+        if(term_id=="AllTerminal"){
+            TermWindowns = document.getElementsByClassName("terminal");
+            for(let i=0; i<TermWindowns.length; i++){
+                TermWindowns[i].innerHTML+="["+curr_time+"] sent to All: "+val+"&#10;";
+            }
+        }
+        else{
+            curr_teminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
+            AllTerminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
+        }
     }
     curr_teminal.scrollTop = curr_teminal.scrollHeight;
     AllTerminal.scrollTop = AllTerminal.scrollHeight;

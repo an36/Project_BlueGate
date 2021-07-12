@@ -3,7 +3,6 @@ let dev_name = new Array(5);
 let BLEChars = new Array(5);
 let BLEvals = new Array(5);
 let conn_devs = 0;
-let selectedTermID;
 let dup_dev = false;
 
 let options = {     //web-bluetooth filters
