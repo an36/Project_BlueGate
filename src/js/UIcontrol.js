@@ -23,6 +23,21 @@ let devlistInner = document.getElementById("devlistInner");
 
 let terminalTabs = document.getElementById("tab");
 
+let terminalWin = document.getElementById("terminals");
+
+function showAllTerminal(){
+    let AllTerminal = document.getElementById("AllTerminal");
+    let TermWindowns = document.getElementsByClassName("terminal");
+
+    for(let i=0; i<TermWindowns.length; i++){
+        TermWindowns[i].classList.add("hidden");
+        console.log(i);
+    }
+
+    AllTerminal.classList.remove("hidden");
+}
+
+
 let addRmServsbtn = document.getElementById("addRmServsbtn");
 addRmServsbtn.onclick = addOptionalServs;
 
@@ -38,14 +53,30 @@ function sendBLE(){
 function addTermTab(device_name, device_id){
     terminalTabs.innerHTML+="<button id=\""+device_id+"\">"+device_name+"</button>";
     document.getElementById(device_id).onclick = function(){
-        selectedDevID=device_id;
+        selectedTermID=device_id;
+        let TermWindowns = document.getElementsByClassName("terminal");
+        let curr_TermWindow = document.getElementById(device_name);
+
+        for(let i=0; i<TermWindowns.length; i++){
+            TermWindowns[i].classList.add("hidden");
+            console.log(i);
+        }
+
+        curr_TermWindow.classList.remove("hidden");
     }
+
+    terminalWin.innerHTML+="<textarea class=\"boxes terminal hidden\" readonly id=\""+device_name+"\"></textarea>";
 }
 
-function rmTermTab(device_id){
-    let dev_tab = document.getElementById(device_id)
+function rmTermTab(device_name, device_id){
+    let dev_tab = document.getElementById(device_id);
+    let curr_TermWindow = document.getElementById(device_name);
     if(dev_tab){
         dev_tab.remove();
+    }
+    if(curr_TermWindow){
+        curr_TermWindow.remove();
+        showAllTerminal();
     }
 }
 
@@ -94,14 +125,17 @@ function rmOptionalServs(){
 
 function terminalLog(sending=0,term_id, curr_time, curr_dev_name,val){
     let curr_teminal = document.getElementById(term_id);
-
+    let AllTerminal = document.getElementById("AllTerminal");
     if(!sending){
         curr_teminal.innerHTML+="["+curr_time+"] "+curr_dev_name+": "+val+"&#10;";
+        AllTerminal.innerHTML+= "["+curr_time+"] "+curr_dev_name+": "+val+"&#10;";
     }
     else{
         curr_teminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
+        AllTerminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
     }
     curr_teminal.scrollTop = curr_teminal.scrollHeight;
+    AllTerminal.scrollTop = AllTerminal.scrollHeight;
 }
 
 function updateDevList(add=0,BLEdev, BLEchar){

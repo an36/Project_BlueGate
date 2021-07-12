@@ -3,7 +3,7 @@ let dev_name = new Array(5);
 let BLEChars = new Array(5);
 let BLEvals = new Array(5);
 let conn_devs = 0;
-let selectedDevID;
+let selectedTermID;
 let dup_dev = false;
 
 let options = {     //web-bluetooth filters
@@ -109,7 +109,7 @@ function onDisconnect(dev_id,error=0){
     if(conn_devs>0){
         for(let i=0; i<conn_devs; i++){
             if(BLEdevice[i].id==dev_id){
-                rmTermTab(dev_id);
+                rmTermTab(dev_name[i],dev_id);
                 updateDevList(0,BLEdevice[i]);
 
                 BLEdevice.splice(i,1);
@@ -180,6 +180,6 @@ async function BLEread(event){
         }
             
         // console.log(BLEvals[this_dev_index]);
-        terminalLog(0, "terminal1", new Date().toLocaleTimeString(), dev_name[this_dev_index], BLEvals[this_dev_index])
+        terminalLog(0, dev_name[this_dev_index], new Date().toLocaleTimeString(), dev_name[this_dev_index], BLEvals[this_dev_index])
     }
 }

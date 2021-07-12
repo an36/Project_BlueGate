@@ -116,3 +116,12 @@ body{
     width: 100%;
     height: calc(100vh - 36.44vh);
 }
+
+#AllTerminal{
+    color: black;
+    background-color: green;
+}
+
+.hidden{
+    display: none;
+}

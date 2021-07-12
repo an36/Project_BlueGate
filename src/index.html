@@ -38,10 +38,12 @@
 
         <div class="column2" style="background-color:#bbb;">
             <div class="tab" id="tab">
-                <button id="tabbtn0">All</button>
+                <button id="Allbtn" onclick="showAllTerminal();">All</button>
             </div>
-            <!-- <textarea class="boxes" readonly name="terminal1" id="terminal1" cols="50" rows="20"></textarea><br> -->
-            <textarea class="boxes terminal" readonly name="terminal1" id="terminal1"></textarea><br>
+            <div id="terminals">
+                <textarea class="boxes terminal" readonly id="AllTerminal"></textarea>
+                <!-- <textarea class="boxes terminal" readonly id="terminal2"></textarea> -->
+            </div>
             <input type="text" id="sendtext" class="boxes"> <button id="sendbtn">Send</button>
         </div>
         
