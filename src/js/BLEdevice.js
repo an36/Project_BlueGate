@@ -144,11 +144,24 @@ async function writeBLE(data){
     // console.log(data);
     if(conn_devs>0){
         let encoder = new TextEncoder('utf-8');
-        await BLEChars[conn_devs-1].writeValue(encoder.encode(data))     //writes 'data' to connected device.  if error, then try again after 30ms.
-        .catch((error)=>{
-            // console.log("in writeBLEindex #36: "+error);
-            setTimeout(async function(){await writeBLE(data);},30);
-        });
+
+        if(selectedTermID=="AllTerminal"){
+            for(let i=0; i<conn_devs; i++){
+                await BLEChars[i].writeValue(encoder.encode(data))     //writes 'data' to connected device.  if error, then try again after 30ms.
+                .catch((error)=>{
+                    // console.log("in writeBLEindex #36: "+error);
+                    setTimeout(async function(){await writeBLE(data);},30);
+                });
+            }
+        }
+        else{
+            let tempDevIndex = dev_name.indexOf(selectedTermID);
+            await BLEChars[tempDevIndex].writeValue(encoder.encode(data))     //writes 'data' to connected device.  if error, then try again after 30ms.
+            .catch((error)=>{
+                // console.log("in writeBLEindex #36: "+error);
+                setTimeout(async function(){await writeBLE(data);},30);
+            });
+        }
     }
 }
 
