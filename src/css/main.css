@@ -4,6 +4,12 @@
 
 :root{
     --columnPadding: 3px;
+    --allTerminalClr: #9B6EF3;
+    --terminal0Clr: #83B2FF;
+    --terminal1Clr: #8BF18B;
+    --terminal2Clr: #FFE981;
+    --terminal3Clr: #FF8650;
+    --terminal4Clr: #FF555E;
 }
 
 *{
@@ -94,17 +100,23 @@ body{
 .devlistInner{
     overflow-y: scroll;
     width: 100%;
+    cursor: default;
 }
 
 .devlistInner b{
     vertical-align: middle;
     word-wrap: break-word;
+    white-space: nowrap;
+    display: flex;
+    position: relative;
 }
 
 .devlistInner img{
     vertical-align: middle;
-    margin-left: 5%;
+    position: absolute;
     cursor: pointer;
+    top: 2px;
+    right: 3px;
 }
 
 
@@ -119,11 +131,12 @@ body{
     text-overflow: ellipsis;
     text-align: left;
     overflow: hidden;
-    border: 1px solid blue;
+    /* border: 1px solid var(--terminal1Clr); */
     padding: 6px 3px;
-    background-color: blue;
+    /* background-color: var(--terminal1Clr); */
     border-top-left-radius: 6px;
     border-top-right-radius: 18px;
+    cursor: pointer;
 }
 
 .terminal{
@@ -134,9 +147,22 @@ body{
     resize: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    border: 3px solid blue;
-    box-shadow: inset 1px 8px 16px -10px whitesmoke;
+    /* border: 3px solid var(--terminal1Clr); */
+    box-shadow: inset 1px 6px 16px -10px white;
+    text-overflow: ellipsis;
+    /* white-space: pre; */
+    text-align: left;
 }
+
+#Allbtn{
+    background-color: var(--allTerminalClr);
+    border: 1px solid var(--allTerminalClr);
+}
+
+#AllTerminal{
+    border: 3px solid var(--allTerminalClr);
+}
+
 
 .terminalInput{
     white-space: nowrap;
@@ -150,7 +176,7 @@ body{
     text-align: left;
     overflow: hidden;
     padding: 6px 3px;
-    direction: rtl;
+    /* direction: rtl; */
     margin-right: 5px;
 }
 

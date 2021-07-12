@@ -53,8 +53,15 @@ function sendBLE(){
 }
 
 function addTermTab(device_name, device_id){
+    let tempDevIndex = dev_name.indexOf(device_name);
     terminalTabs.innerHTML+="<button id=\""+device_id+"\">"+device_name+"</button>";
-    document.getElementById(device_id).onclick = function(){
+    
+    let curr_tabbtn = document.getElementById(device_id); 
+
+    curr_tabbtn.style.border = "1px solid var(--terminal"+tempDevIndex+"Clr)";
+    curr_tabbtn.style.backgroundColor = "var(--terminal"+tempDevIndex+"Clr)";
+
+    curr_tabbtn.onclick = function(){
         selectedTermID=device_name;
         let TermWindowns = document.getElementsByClassName("terminal");
         let curr_TermWindow = document.getElementById(device_name);
@@ -63,6 +70,10 @@ function addTermTab(device_name, device_id){
             TermWindowns[i].classList.add("hidden");
             console.log(i);
         }
+
+        let tempDevIndex = dev_name.indexOf(device_name);
+
+        curr_TermWindow.style.border = "3px solid var(--terminal"+tempDevIndex+"Clr)";
 
         curr_TermWindow.classList.remove("hidden");
     }
@@ -171,7 +182,7 @@ function updateDevList(add=0,BLEdev, BLEchar){
             curr_properties += "Notify";
         }
     
-        devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/assets/Red-incorrect-icon-button-on-transparent-background-PNG-1.png\" width=\"17\" height=\"17\"></b><br>Properties: "+curr_properties+"<br><br></a>";
+        devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/assets/Red-incorrect-icon-button-on-transparent-background-PNG-1.png\" width=\"17\" height=\"17\"></b>Properties: "+curr_properties+"<br><br></a>";
     }
     else{
         if(BLEdev){
