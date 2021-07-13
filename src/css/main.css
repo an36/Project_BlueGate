@@ -177,18 +177,19 @@ body{
     cursor: default;
     padding-left: 8px;
     padding-top: 6px;
-    /* text-align:center;
+    
+    text-align:left;
     font-family: Verdana, Geneva, sans-serif;
-    font-size: auto;
+    font-size: 12px;
     letter-spacing: 0px;
     word-spacing: 2px;
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 200;
     text-decoration: none;
     font-style: italic;
     font-variant: normal;
     text-transform: capitalize;
-    line-height: auto; */
+    line-height: auto;
 }
 
 .devlistInner b{
@@ -197,6 +198,7 @@ body{
     white-space: nowrap;
     display: flex;
     position: relative;
+    padding-bottom: 5px;
 
     text-align:center;
     font-family: Verdana, Geneva, sans-serif;
