@@ -79,6 +79,7 @@ function addTermTab(device_name, device_id){
         curr_TermWindow.style.border = "3px solid var(--terminal"+tempDevIndex+"Clr)";
 
         curr_TermWindow.classList.remove("hidden");
+        curr_TermWindow.scrollTop = curr_TermWindow.scrollHeight;
 
         sendbtn.style.backgroundColor = "var(--terminal"+tempDevIndex+"Clr)";
     }
