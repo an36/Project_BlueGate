@@ -37,6 +37,9 @@ function showAllTerminal(){
 
     selectedTermID = "AllTerminal";
     AllTerminal.classList.remove("hidden");
+
+    sendbtn.style.backgroundColor = "var(--allTerminalClr)";
+
 }
 
 
@@ -76,6 +79,8 @@ function addTermTab(device_name, device_id){
         curr_TermWindow.style.border = "3px solid var(--terminal"+tempDevIndex+"Clr)";
 
         curr_TermWindow.classList.remove("hidden");
+
+        sendbtn.style.backgroundColor = "var(--terminal"+tempDevIndex+"Clr)";
     }
 
     terminalWin.innerHTML+="<textarea class=\"boxes terminal hidden\" readonly id=\""+device_name+"\"></textarea>";
@@ -113,6 +118,7 @@ function addOptionalServs(){
             options.optionalServices.splice(tempIndex,1);
             document.getElementById(temp).remove();
             addRmServsbtn.innerHTML="Add";
+            addRmServsbtn.style.backgroundColor= "var(--addbtnClr)";
         }
     }
 
@@ -121,6 +127,9 @@ function addOptionalServs(){
 }
 
 function rmOptionalServs(){
+    addRmServsbtn.innerHTML="Add";
+    addRmServsbtn.style.backgroundColor= "var(--addbtnClr)";
+
     if(ServsInput.value.length>0){
         let temp = ServsInput.value;
         if(ServsInput.value.startsWith('0x')){
@@ -129,9 +138,7 @@ function rmOptionalServs(){
         
         if(options.optionalServices.includes(temp)){
             addRmServsbtn.innerHTML="Remove";
-        }
-        else{
-            addRmServsbtn.innerHTML="Add";
+            addRmServsbtn.style.backgroundColor= "var(--rmbtnClr)";
         }
     }
 }

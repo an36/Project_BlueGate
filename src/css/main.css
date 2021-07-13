@@ -3,7 +3,12 @@
 }
 
 :root{
-    --columnPadding: 3px;
+    --columnPadding: 4px;
+    --pgbgColor: #1e1e29;
+    --devListClr: #332f3f;
+    --addbtnClr: #69ec69;
+    --rmbtnClr: #f16d64;
+    --connbtnClr: #4d75e0;
     --allTerminalClr: #9B6EF3;
     --terminal0Clr: #83B2FF;
     --terminal1Clr: #8BF18B;
@@ -14,13 +19,14 @@
 
 *{
     box-sizing: border-box;
-    /* height: 100vh; */
 }
 
 body{
     margin: 0;
-    background-color: #ececfd; 
-    height: 100%;   
+    /* background-color: #ececfd;  */
+    background: black;
+    background: var(--pgbgColor); 
+    height: 100vh;   
     /* overflow: hidden; */
 }
 
@@ -31,7 +37,8 @@ body{
     /* border: 1px solid black; */
     overflow: hidden;
     z-index: 0;
-    height: 9vh;
+    height: 4.2em;
+    /* height: 9vh; */
     justify-content: center;
     /* box-shadow: 0px 4px 7.5px grey; */
     box-shadow: rgb(38, 57, 77) 0px 8px 30px -5px;  
@@ -57,6 +64,31 @@ body{
     z-index: 1;
 }
 
+.btn{
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    /* background-color:#4eb5f1; */
+    text-align:center;
+    transition: all 0.2s;
+    border: 0;
+}
+.btn:hover{
+    background-color:#4095c6;
+}
+
+#addRmServsbtn{
+    background-color:var(--addbtnClr);
+}
+
+#connbtn{
+    background-color:var(--connbtnClr);
+}
+
+#sendbtn{
+    background-color:var(--allTerminalClr);
+}
+
 .boxes{
     border: 1.7px solid rgba(0, 0, 0, 0.301);
     border-radius: 6px;
@@ -79,7 +111,10 @@ body{
     float: left;
     width: 50%;
     height: calc(100vh - 20vh);
+    max-height: calc(100vh - 20vh);
     padding: var(--columnPadding);
+    overflow-y: scroll;
+    position: relative;
 }
 .column3{
     float: left;
@@ -98,6 +133,9 @@ body{
     position: relative;
     height: 100%;
     width: 100%;
+    background: black;
+    background: var(--devListClr);
+    box-shadow: -2px -2px 8px 0px rgba(14, 15, 29, 0.603) inset;
 }
 
 .devlistInner{
@@ -126,6 +164,7 @@ body{
 .tab{
     white-space: nowrap;
     display: flex;
+    height: auto;
 }
 
 .tab button{
@@ -143,12 +182,15 @@ body{
 }
 
 #terminals{
-    height: 89%;
+    height: 88.7%;
+    width: 100%;
+    /* max-height: calc(100vh - 30vh); */
+    overflow: hidden;
 }
+
 .terminal{
     width: 100%;
     height: 100%;
-    /* height: calc(100vh - 38.44vh); */
     color: rgb(218, 218, 218);
     background-color: rgb(0, 0, 0);
     resize: none;
@@ -175,6 +217,8 @@ body{
     white-space: nowrap;
     display: flex;
     margin-top: 5px;
+    height: auto;
+    /* position: relative; */
 }
 
 .terminalInput Input{
@@ -184,7 +228,6 @@ body{
     text-align: left;
     overflow: hidden;
     padding: 6px 3px;
-    /* direction: rtl; */
     margin-right: 5px;
 }
 
