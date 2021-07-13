@@ -253,6 +253,14 @@ body{
     
 }
 
+.clearbtn{
+    position: absolute;
+    /* top: 0; */
+    margin: 8px 12px;
+    right:0;
+    cursor: pointer;
+}
+
 #terminals{
     height: 88.7%;
     width: 100%;

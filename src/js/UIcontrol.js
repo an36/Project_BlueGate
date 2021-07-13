@@ -167,6 +167,10 @@ function terminalLog(sending=0,term_id, curr_time, curr_dev_name,val){
     AllTerminal.scrollTop = AllTerminal.scrollHeight;
 }
 
+function clearTerminal(){
+    document.getElementById(selectedTermID).innerHTML = "";
+}
+
 function updateDevList(add=0,BLEdev, BLEchar){
     let curr_properties = "";
     // console.log(BLEdev.id);
