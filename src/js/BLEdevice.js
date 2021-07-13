@@ -147,11 +147,14 @@ async function writeBLE(data){
 
         if(selectedTermID=="AllTerminal"){
             for(let i=0; i<conn_devs; i++){
-                await BLEChars[i].writeValue(encoder.encode(data))     //writes 'data' to connected device.  if error, then try again after 30ms.
-                .catch((error)=>{
-                    // console.log("in writeBLEindex #36: "+error);
-                    setTimeout(async function(){await writeBLE(data);},30);
-                });
+                if(BLEChars[i] && BLEChars[i].properties.notify && BLEChars[i].properties.write){
+                    console.log("BLEChars[i] exists");
+                    await BLEChars[i].writeValue(encoder.encode(data))     //writes 'data' to connected device.  if error, then try again after 30ms.
+                    .catch((error)=>{
+                        // console.log("in writeBLEindex #36: "+error);
+                        setTimeout(async function(){await writeBLE(data);},30);
+                    });
+                }
             }
         }
         else{
