@@ -314,3 +314,36 @@ body{
 .hidden{
     display: none;
 }
+
+
+.column3 > div{
+    border: 1px solid black;
+    height: 50%;
+    width: 100%;
+    overflow: scroll;
+    position: relative;
+}
+
+.shortcuts > b{
+    color: white;
+    display: block;
+    /* position: relative; */
+    margin: 5px 5px;
+}
+.shortcuts > img{
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top:0;
+    margin: 3px 3px;
+}
+.shortcutsInner{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(3, 1fr);
+    height: 89%;
+}
+
+/* .shortcuts > *{
+
+} */
