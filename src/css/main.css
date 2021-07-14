@@ -23,25 +23,19 @@
 
 body{
     margin: 0;
-    /* background-color: #ececfd;  */
-    background: black;
     background: var(--pgbgColor); 
     height: 100vh;   
-    /* overflow: hidden; */
 }
 
 .topNavBar{
     display: flex;
     position: relative;
     background-color:rgb(77, 58, 250);
-    /* border: 1px solid black; */
     overflow: hidden;
     z-index: 0;
     height: 4.2em;
-    /* height: 9vh; */
     justify-content: center;
-    /* box-shadow: 0px 4px 7.5px grey; */
-    box-shadow: rgb(38, 57, 77) 0px 8px 30px -5px;  
+    box-shadow: rgb(50 42 119) 0px 5px 20px 2px;
 }
 
 #title{
