@@ -7,6 +7,11 @@ connbtn.onclick = scanBLE;
 
 let ServsInput = document.getElementById("ServsInput");
 ServsInput.oninput = rmOptionalServs;
+ServsInput.addEventListener("keyup",function(e){
+    if(e.key === 'Enter'){
+        addOptionalServs();
+    }
+});
 
 let optionalServs = document.getElementById("optionalServs");
 

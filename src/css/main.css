@@ -132,6 +132,7 @@ body{
     /* background-color:black; */
     padding: 6px 3px;
     margin-right: 5px;
+    outline: none;
 }
 
 .column1{
@@ -309,6 +310,7 @@ body{
     overflow: hidden;
     padding: 6px 3px;
     margin-right: 5px;
+    outline: none;
 }
 
 .hidden{
