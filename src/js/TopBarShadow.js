@@ -26,6 +26,7 @@ let currCycleGreen = 0;
 let currCycleBlue = 0;
 let CycleRate = 1.3;
 let topNavBar = document.getElementById("topNavBar");
+let topNavBarTitle = document.getElementById("title");
 
 function preload ()
 {
@@ -39,80 +40,81 @@ function create ()
 
 function update ()
 {
-    SetRGBCycle();
+  SetRGBCycle();
 }
 
 /*Makes the top nav bar shadow Cycle thorugh RGB colors*/
 function SetRGBCycle(){
-    topNavBar.style.boxShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") 0px -12px 30px 5px";
+  topNavBar.style.boxShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") 0px -12px 30px 5px";
+  // topNavBarTitle.style.textShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") -1.5px -1px 3px";    //uncomment to Cycle RGB the title's text shadow
 
-    if(CycleRedTurn){
-      if(currCycleRed>=255){
-        if(currCycleBlue>0){
-          currCycleBlue-=CycleRate;
-          if(currCycleBlue<0){
-            currCycleBlue=0;
-          }
-          return;
+  if(CycleRedTurn){
+    if(currCycleRed>=255){
+      if(currCycleBlue>0){
+        currCycleBlue-=CycleRate;
+        if(currCycleBlue<0){
+          currCycleBlue=0;
         }
-        else{
-          CycleGreenTurn = true;
-          CycleRedTurn = false;
-        }
+        return;
       }
       else{
-          currCycleRed+=CycleRate;
-          if(currCycleRed>=255){
-            currCycleRed=255;
-          }
-        return;
+        CycleGreenTurn = true;
+        CycleRedTurn = false;
       }
     }
-    
-    if(CycleGreenTurn){
-      if(currCycleGreen>=255){
-        if(currCycleRed>0){
-          currCycleRed-=CycleRate;
-          if(currCycleRed<0){
-            currCycleRed=0;
-          }
-          return;
+    else{
+        currCycleRed+=CycleRate;
+        if(currCycleRed>=255){
+          currCycleRed=255;
         }
-        else{
-          CycleGreenTurn = false;
-          CycleBlueTurn = true;
-        }
-      }
-      else{
-        currCycleGreen+=CycleRate;
-        if(currCycleGreen>255){
-          currCycleGreen=255;
-        }
-        return;
-      }
-    }
-  
-    if(CycleBlueTurn){
-      if(currCycleBlue>=255){
-        if(currCycleGreen>0){
-          currCycleGreen-=CycleRate;
-          if(currCycleGreen<0){
-            currCycleGreen=0;
-          }
-          return;
-        }
-        else{
-          CycleBlueTurn = false;
-          CycleRedTurn = true;
-          return;
-        }
-      }
-      else{
-        currCycleBlue+=CycleRate;
-        if(currCycleBlue>255){
-          currCycleBlue=255;
-        }
-        return;
-      }
+      return;
     }
   }
+
+  if(CycleGreenTurn){
+    if(currCycleGreen>=255){
+      if(currCycleRed>0){
+        currCycleRed-=CycleRate;
+        if(currCycleRed<0){
+          currCycleRed=0;
+        }
+        return;
+      }
+      else{
+        CycleGreenTurn = false;
+        CycleBlueTurn = true;
+      }
+    }
+    else{
+      currCycleGreen+=CycleRate;
+      if(currCycleGreen>255){
+        currCycleGreen=255;
+      }
+      return;
+    }
+  }
+
+  if(CycleBlueTurn){
+    if(currCycleBlue>=255){
+      if(currCycleGreen>0){
+        currCycleGreen-=CycleRate;
+        if(currCycleGreen<0){
+          currCycleGreen=0;
+        }
+        return;
+      }
+      else{
+        CycleBlueTurn = false;
+        CycleRedTurn = true;
+        return;
+      }
+    }
+    else{
+      currCycleBlue+=CycleRate;
+      if(currCycleBlue>255){
+        currCycleBlue=255;
+      }
+      return;
+    }
+  }
+}

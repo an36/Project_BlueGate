@@ -49,7 +49,7 @@ body{
     font-style: normal;
     font-variant: normal;
     text-transform: none;
-    text-shadow: -1.5px -1px 3px #fff6b2;
+    text-shadow: rgb(255 246 178) -1.5px -1px 3px;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
