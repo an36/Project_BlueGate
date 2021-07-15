@@ -25,8 +25,10 @@ let currCycleRed = 0;
 let currCycleGreen = 0;
 let currCycleBlue = 0;
 let CycleRate = 1.3;
+
 let topNavBar = document.getElementById("topNavBar");
 let topNavBarTitle = document.getElementById("title");
+let SCbuttons = undefined;
 
 function preload ()
 {
@@ -47,6 +49,9 @@ function update ()
 function SetRGBCycle(){
   topNavBar.style.boxShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") 0px -12px 30px 5px";
   // topNavBarTitle.style.textShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") -1.5px -1px 3px";    //uncomment to Cycle RGB the title's text shadow
+  if(SCbuttons){
+    SCbuttons.style.boxShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") 0px 15px 25px -5px";
+  }
 
   if(CycleRedTurn){
     if(currCycleRed>=255){
@@ -117,4 +122,16 @@ function SetRGBCycle(){
       return;
     }
   }
+}
+
+function SCRGBshadow(e){
+  e = e || window.event;
+  SCbuttons = e
+  console.log(e);
+}
+
+function restoreSCShaodw(e){
+  e = e || window.event;
+  SCbuttons.style.boxShadow = "none";
+  SCbuttons = undefined;
 }
