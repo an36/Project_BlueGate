@@ -42,6 +42,7 @@ function showAllTerminal(){
 
     selectedTermID = "AllTerminal";
     AllTerminal.classList.remove("hidden");
+    AllTerminal.scrollTop = AllTerminal.scrollHeight;
 
     sendbtn.style.backgroundColor = "var(--allTerminalClr)";
 
@@ -149,9 +150,10 @@ function rmOptionalServs(){
     }
 }
 
-function terminalLog(sending=0,term_id, curr_time, curr_dev_name,val){
+function terminalLog(sending=0,term_id, curr_time, curr_dev_name,val, SCempty=0){
     let curr_teminal = document.getElementById(term_id);
     let AllTerminal = document.getElementById("AllTerminal");
+
     if(!sending){
         curr_teminal.innerHTML+="["+curr_time+"] "+curr_dev_name+": "+val+"&#10;";
         AllTerminal.innerHTML+= "["+curr_time+"] "+curr_dev_name+": "+val+"&#10;";
@@ -160,14 +162,26 @@ function terminalLog(sending=0,term_id, curr_time, curr_dev_name,val){
         if(term_id=="AllTerminal"){
             TermWindowns = document.getElementsByClassName("terminal");
             for(let i=0; i<TermWindowns.length; i++){
-                TermWindowns[i].innerHTML+="["+curr_time+"] sent to All: "+val+"&#10;";
+                if(SCempty){
+                    TermWindowns[i].innerHTML+="Shortcut "+curr_dev_name+" doesn't have a value&#10;";
+                }
+                else{
+                    TermWindowns[i].innerHTML+="["+curr_time+"] sent to All: "+val+"&#10;";
+                }
             }
         }
         else{
-            curr_teminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
-            AllTerminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
+            if(SCempty){
+                curr_teminal.innerHTML+="Shortcut "+curr_dev_name+" doesn't have a value&#10;";
+                AllTerminal.innerHTML+="Shortcut "+curr_dev_name+" doesn't have a value&#10;";        
+            }
+            else{
+                curr_teminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
+                AllTerminal.innerHTML+="["+curr_time+"] sent to "+curr_dev_name+": "+val+"&#10;";
+            }
         }
     }
+
     curr_teminal.scrollTop = curr_teminal.scrollHeight;
     AllTerminal.scrollTop = AllTerminal.scrollHeight;
 }
@@ -249,5 +263,17 @@ function SCsettings(e){
 
             SCsettings[i].style.display = "none";
         }
+    }
+}
+
+function shortcutClick(SCbutton){
+    let SClabel = SCbutton.innerHTML;
+    let SCvalue = SCbutton.value;
+    if(SCvalue.length>0){
+        writeBLE(SCvalue);
+        terminalLog(1, selectedTermID, new Date().toLocaleTimeString(), selectedTermID, SCvalue);
+    }
+    else{
+        terminalLog(1, selectedTermID, new Date().toLocaleTimeString(), SClabel, SCvalue, 1);
     }
 }
