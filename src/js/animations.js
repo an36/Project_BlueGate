@@ -50,7 +50,7 @@ function SetRGBCycle(){
   topNavBar.style.boxShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") 0px -12px 30px 5px";
   // topNavBarTitle.style.textShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") -1.5px -1px 3px";    //uncomment to Cycle RGB the title's text shadow
   if(SCbuttons){
-    SCbuttons.style.boxShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") 1.5px 3px 7px -3.8px";
+    SCbuttons.style.boxShadow = "rgb("+currCycleRed+" "+currCycleGreen+" "+currCycleBlue+") 2px 2.7px 9.5px -2.5px";
   }
 
   if(CycleRedTurn){
