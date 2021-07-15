@@ -56,6 +56,7 @@ function addOptionalServs(){
             addRmServsbtn.innerHTML="Add";
             addRmServsbtn.style.backgroundColor= "var(--addbtnClr)";
         }
+        savePage('options',JSON.stringify(options));
     }
 
     ServsInput.value = "";
