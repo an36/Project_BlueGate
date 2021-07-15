@@ -251,16 +251,14 @@ body{
 
 .clearbtn{
     position: absolute;
-    /* top: 0; */
     margin: 8px 12px;
     right:0;
     cursor: pointer;
 }
 
 #terminals{
-    height: 88.7%;
+    height: calc(100vh - 30.1vh);
     width: 100%;
-    /* max-height: calc(100vh - 30vh); */
     overflow: hidden;
 }
 
@@ -316,7 +314,7 @@ body{
 .column3 > div{
     /* border: 1px solid black; */
     margin-bottom: 5px;
-    height: 50%;
+    height: 49.5%;
     width: 100%;
     overflow: scroll;
     position: relative;
