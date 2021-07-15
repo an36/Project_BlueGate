@@ -347,7 +347,7 @@ body{
     /* padding: 1.5rem 2rem; */
     font-size: auto;
     font-family: monospace;
-    transition: all 0.18s;
+    transition: all 0.16s;
     cursor: pointer;
     border-radius: 5px;
     border-bottom: 4px solid rgba(128, 128, 128, 0.7);
@@ -358,9 +358,13 @@ body{
 }
 .shortcutsInner > button:hover{
     transform: scale(1.02);  
+    border-bottom: 5.4px solid rgba(128, 128, 128, 0.7);
+    border-right: 3.6px solid rgba(128, 128, 128, 0.7);
     z-index: 9;
 }
 .shortcutsInner > button:active{
     transform: scale(.9554);
+    border-bottom: 2.2px solid rgba(128, 128, 128, 0.7);
+    border-right: 1.2px solid rgba(128, 128, 128, 0.7);
     z-index: 9;
 }
