@@ -110,6 +110,7 @@ body{
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     z-index: 2;
+    outline: none;
 }
 
 .opServs{
@@ -313,11 +314,16 @@ body{
 
 
 .column3 > div{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin-bottom: 5px;
     height: 50%;
     width: 100%;
     overflow: scroll;
     position: relative;
+    background: black;
+    background: var(--devListClr);
+    box-shadow: -2px -2px 8px 0px rgba(14, 15, 29, 0.603) inset;
+    border-radius: 6px;
 }
 
 .shortcuts > b{
@@ -358,6 +364,7 @@ body{
 }
 
 .shortcutsInner > button{
+    /* display: none; */
     background-color: #6f52ee;
     border: 0;
     outline: border;
@@ -396,4 +403,37 @@ body{
     border-bottom: 0.5px solid rgba(128, 128, 128, 0.7);
     border-right: 0.3px solid rgba(128, 128, 128, 0.7);
     z-index: 9;
+}
+
+.shortcutsInputs{
+    display: none;
+    padding: 2px 2px;
+    background-color: #625e91;
+    border: 0px solid black;
+    color: white;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    /* font-style: italic; */
+    font-variant: normal;
+    text-transform: capitalize;
+    line-height: 16px;
+}
+
+.shortcutsInputs > *{
+    margin-left: 0.5px;
+}
+
+.shortcutsInputs > input{
+    height: fit-content;
+    width: 100%;
+    box-shadow: none;
+    margin-bottom: 2.5px;
+    margin-top: 0px;
+    font-size: 12.5px;
 }

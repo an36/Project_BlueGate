@@ -127,11 +127,14 @@ function SetRGBCycle(){
 function SCRGBshadow(e){
   e = e || window.event;
   SCbuttons = e
-  console.log(e);
+  // console.log(e);
 }
 
 function restoreSCShaodw(e){
   e = e || window.event;
   SCbuttons.style.boxShadow = "none";
+  if(SCbuttons.className==='shortcutsInputs boxes'){
+    SCbuttons.style.boxShadow = "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset";
+  }
   SCbuttons = undefined;
 }

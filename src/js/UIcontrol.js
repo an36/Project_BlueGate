@@ -214,3 +214,40 @@ function updateDevList(add=0,BLEdev, BLEchar){
     }
 
 }
+
+function SCsettings(e){
+    e = e || window.event;
+
+    let SCbuttons = document.getElementsByClassName("shortcutsInner")[0].getElementsByTagName("button"); 
+    let SCsettings = document.getElementsByClassName("shortcutsInputs");
+
+    if(e.name=="hidden"){
+        e.name = "visible";
+        e.src = "/src/assets/check.png";
+        
+        for(let i=0; i<SCbuttons.length; i++){
+            SCbuttons[i].style.display = "none";
+            SCsettings[i].style.display = "block";
+        }
+    }
+    else{
+        e.name = "hidden";
+        e.src = "/src/assets/settings.jpg";
+
+        for(let i=0; i<SCsettings.length; i++){
+            SCbuttons[i].style.display = "block";
+
+            let SClabel = document.getElementById("labelSC"+i).value;
+            let SCvalue = document.getElementById("valueSC"+i).value;
+            
+            if(SClabel.length>0){
+                SCbuttons[i].innerText = SClabel;
+            }
+            if(SCvalue.length>0){
+                SCbuttons[i].value = SCvalue;
+            }
+
+            SCsettings[i].style.display = "none";
+        }
+    }
+}
