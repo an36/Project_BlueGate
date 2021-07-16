@@ -224,6 +224,43 @@ function terminalLog(sending=0,term_id, curr_time, curr_dev_name,val, SCempty=0)
     AllTerminal.scrollTop = AllTerminal.scrollHeight;
 }
 
+function TerminalSettings(e){
+    e = e || window.event;
+
+    let TerminalSettings = document.getElementById("TerminalSettings"); 
+    // let SCsettings = document.getElementsByClassName("shortcutsInputs");
+
+    if(e.name=="hidden"){
+        e.name = "visible";
+        e.src = "/src/assets/check.png";
+        
+        TerminalSettings.style.display = "grid";
+    }
+    else{
+        e.name = "hidden";
+        e.src = "/src/assets/settings.jpg";
+
+        TerminalSettings.style.display = "none";
+    }
+}
+
+function TerminalColors(e){
+    e = e || window.event;
+    let terminals = terminalWin.getElementsByTagName('textarea');
+    // console.log(terminalWin.getElementsByTagName('textarea'));
+    
+    if(e.name=="TermColor"){
+        for(let i=0; i<terminals.length; i++){
+            terminals[i].style.backgroundColor = e.value;
+        }
+    }
+    else{
+        for(let i=0; i<terminals.length; i++){
+            terminals[i].style.color = e.value;
+        }
+    }
+}
+
 function clearTerminal(){
     document.getElementById(selectedTermID).innerHTML = "";
 }

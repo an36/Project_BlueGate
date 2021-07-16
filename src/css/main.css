@@ -256,6 +256,50 @@ body{
     cursor: pointer;
 }
 
+#TerminalSettingsbtn{
+    position: absolute;
+    margin: 8px 35px;
+    right:0;
+    cursor: pointer;
+}
+
+#TerminalSettings{
+    position: absolute;
+    /* display: grid; */
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #676299;
+    padding: 10px 0px;
+    padding-bottom: 3px;
+    right: 14px;
+    top: 65px;
+}
+
+#TerminalSettings > label{
+    color: white;
+    margin-bottom: 14px;
+    margin-left: 10px;
+    /* margin-right: 1px; */
+    width: fit-content;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    font-weight: 700;
+    text-decoration: none;
+    font-variant: normal;
+    text-transform: capitalize;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+#TerminalSettings > input{
+    margin-left: 20px;
+    transform: scale(1.05);  
+    outline:none;
+    cursor: pointer;
+}
+
 #terminals{
     height: calc(100vh - 30.1vh);
     width: 100%;
