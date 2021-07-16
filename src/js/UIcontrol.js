@@ -322,6 +322,17 @@ function SCsettings(e){
     }
 }
 
+function clearSCsettings(){
+    let SCsettings = document.getElementsByClassName("shortcutsInputs");
+
+    for(let i=0; i<SCsettings.length; i++){
+        document.getElementById("SC"+i).innerText = "SC"+(i+1);
+        document.getElementById("SC"+i).value = "";
+        document.getElementById("labelSC"+i).value = "";
+        document.getElementById("valueSC"+i).value = "";
+    }
+}
+
 function SCsettingEnterKey(key_event){
     key_event = key_event || window.event;
     let tempKeyCode = key_event.which || key_event.keyCode;

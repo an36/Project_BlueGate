@@ -391,6 +391,7 @@ body{
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
 .shortcuts > img{
     position: absolute;
     cursor: pointer;
@@ -398,6 +399,15 @@ body{
     top:0;
     margin: 3px 3px;
 }
+
+#SCclearbtn{
+    position: absolute;
+    cursor: pointer;
+    right: 22px;
+    top:0;
+    margin: 3px 3px;
+}
+
 .shortcutsInner{
     display: grid;
     grid-gap: 4px;
