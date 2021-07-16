@@ -395,15 +395,15 @@ body{
 .shortcuts > img{
     position: absolute;
     cursor: pointer;
-    right: 0;
-    top:0;
+    right: 22px;
+    top: 0;
     margin: 3px 3px;
 }
 
 #SCclearbtn{
     position: absolute;
     cursor: pointer;
-    right: 22px;
+    right: 0;
     top:0;
     margin: 3px 3px;
 }
