@@ -265,6 +265,15 @@ function SCsettings(e){
     }
 }
 
+function SCsettingEnterKey(key_event){
+    key_event = key_event || window.event;
+    let tempKeyCode = key_event.which || key_event.keyCode;
+
+    if(tempKeyCode==13){
+        SCsettings(document.getElementById("SCsettingsbtn"));
+    }
+}
+
 function shortcutClick(SCbutton){
     let SClabel = SCbutton.innerHTML;
     let SCvalue = SCbutton.value;

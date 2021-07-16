@@ -64,91 +64,91 @@
         <div class="column3">
             <div class="shortcuts">
                 <b>Shortcut Buttons:</b>
-                <img name="hidden" src="/src/assets/settings.jpg" width="18" height="18" alt="Edit Shortcuts" onclick="SCsettings(this)">
+                <img id="SCsettingsbtn" name="hidden" src="/src/assets/settings.jpg" width="18" height="18" alt="Edit Shortcuts" onclick="SCsettings(this)">
                 <div class="shortcutsInner">
                     <button id="SC0" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC1</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC0" class="boxes" type="text" placeholder="SC1" value="">
+                        <input id="labelSC0" class="boxes" type="text" placeholder="SC1" value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC0" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC0" class="boxes" type="text" placeholder="ASCII value" value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC1" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC2</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC1" class="boxes" type="text" placeholder="SC2" value="">
+                        <input id="labelSC1" class="boxes" type="text" placeholder="SC2"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC1" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC1" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC2" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC3</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC2" class="boxes" type="text" placeholder="SC3" value="">
+                        <input id="labelSC2" class="boxes" type="text" placeholder="SC3"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC2" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC2" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC3" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC4</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC3" class="boxes" type="text" placeholder="SC4" value="">
+                        <input id="labelSC3" class="boxes" type="text" placeholder="SC4"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC3" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC3" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC4" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC5</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC4" class="boxes" type="text" placeholder="SC5" value="">
+                        <input id="labelSC4" class="boxes" type="text" placeholder="SC5"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC4" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC4" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC5" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC6</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC5" class="boxes" type="text" placeholder="SC6" value="">
+                        <input id="labelSC5" class="boxes" type="text" placeholder="SC6"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC5" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC5" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC6" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC7</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC6" class="boxes" type="text" placeholder="SC7" value="">
+                        <input id="labelSC6" class="boxes" type="text" placeholder="SC7"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC6" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC6" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC7" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC8</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC7" class="boxes" type="text" placeholder="SC8" value="">
+                        <input id="labelSC7" class="boxes" type="text" placeholder="SC8"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC7" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC7" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC8" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC9</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC8" class="boxes" type="text" placeholder="SC9" value="">
+                        <input id="labelSC8" class="boxes" type="text" placeholder="SC9"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC8" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC8" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC9" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC10</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC9" class="boxes" type="text" placeholder="SC10" value="">
+                        <input id="labelSC9" class="boxes" type="text" placeholder="SC10"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC9" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC9" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC10" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC11</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC10" class="boxes" type="text" placeholder="SC11" value="">
+                        <input id="labelSC10" class="boxes" type="text" placeholder="SC11"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC10" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC10" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                     <button id="SC11" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC12</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
                         <a>Label:</a>
-                        <input id="labelSC11" class="boxes" type="text" placeholder="SC12" value="">
+                        <input id="labelSC11" class="boxes" type="text" placeholder="SC12"  value="" onkeyup="SCsettingEnterKey(event)">
                         <a>Value:</a>
-                        <input id="valueSC11" class="boxes" type="text" placeholder="ASCII value" value="">
+                        <input id="valueSC11" class="boxes" type="text" placeholder="ASCII value"  value="" onkeyup="SCsettingEnterKey(event)">
                     </div>
                 </div>
             </div>
