@@ -244,6 +244,27 @@ function TerminalSettings(e){
     }
 }
 
+document.body.onclick = function(e){
+    e = e || window.event;
+    let TerminalSettingsDiv = document.getElementById("TerminalSettings");
+    let TermSettingsElement = false
+
+    for(let i=0; i<TerminalSettingsDiv.children.length; i++){
+        if(TerminalSettingsDiv.children[i] == e.target){
+            TermSettingsElement = true;
+        }
+    }
+    
+    if(e.target.id == "TerminalSettingsbtn" || e.target.id =="TerminalSettings" || TermSettingsElement){
+        return;
+    }
+
+    let TerminalSettingsbtn = document.getElementById("TerminalSettingsbtn");
+    if(TerminalSettingsbtn.name == "visible"){
+        TerminalSettings(TerminalSettingsbtn);
+    }
+}
+
 function TerminalColors(e){
     e = e || window.event;
     let terminals = terminalWin.getElementsByTagName('textarea');
