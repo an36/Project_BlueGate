@@ -37,13 +37,12 @@ sendbtn.onclick = sendBLE;
 function addOptionalServs(){
     if(ServsInput.value.length>0){
         let temp = ServsInput.value;
-        // console.log(temp);
+
+        if(ServsInput.value.startsWith('0x')){
+            temp = parseInt(ServsInput.value,16);
+        }
 
         if(addRmServsbtn.innerHTML=="Add"){
-            if(ServsInput.value.startsWith('0x')){
-                temp = parseInt(ServsInput.value,16);
-            }
-            
             if(!(options.optionalServices.includes(temp))){
                 options.optionalServices.push(temp);
                 optionalServs.innerHTML+="<option id=\""+ServsInput.value+"\" value=\""+ServsInput.value+"\">";
@@ -52,7 +51,7 @@ function addOptionalServs(){
         else{
             let tempIndex = options.optionalServices.indexOf(temp);
             options.optionalServices.splice(tempIndex,1);
-            document.getElementById(temp).remove();
+            document.getElementById(ServsInput.value).remove();
             addRmServsbtn.innerHTML="Add";
             addRmServsbtn.style.backgroundColor= "var(--addbtnClr)";
         }

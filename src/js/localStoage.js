@@ -69,6 +69,11 @@ function resumePage() {
     if(options.optionalServices.length > 1){
         for(let i=1; i<options.optionalServices.length; i++){
             let tempVal = options.optionalServices[i];
+            if(Number.isInteger(tempVal)){
+                let tempString = "0x";
+                tempString += tempVal.toString(16);
+                tempVal = tempString;
+            }
             optionalServs.innerHTML+="<option id=\""+tempVal+"\" value=\""+tempVal+"\">";
         }
     }
