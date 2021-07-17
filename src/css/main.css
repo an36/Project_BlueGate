@@ -67,6 +67,26 @@ img:hover{
     cursor: default;
 }
 
+.myCredits{
+    display: inline;
+    position: absolute;
+    z-index: 99;
+    top: 75px;
+    right: 9.3px;
+}
+
+.myCredits > a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+
+.myCredits > a svg{
+    /* margin-right: 10px; */
+    vertical-align: middle;
+}
+
 .btn{
     border-radius: 2em;
     box-sizing: border-box;
