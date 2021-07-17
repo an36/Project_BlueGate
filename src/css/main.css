@@ -489,3 +489,56 @@ body{
     margin-top: 0px;
     font-size: 12.5px;
 }
+
+.helpBox{
+    display: block;
+    color: white;
+    padding: 3px 5px;
+
+    text-align:left;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-style: auto;
+    font-variant: normal;
+    text-transform: capitalize;
+    overflow-x: hidden !important;
+}
+
+.helpBox > b, h1{
+    display: block;
+    overflow: hidden !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.helpBox > b{
+    font-size: 19px;
+    margin-bottom: -9px;
+}
+
+.helpBox > h1{
+    margin-top: 18px;
+    margin-bottom: 4px;
+    font-size: 17px;
+}
+
+.helpBox > *{
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14.7px;
+}
+
+.helpBox > a{
+    line-height: 16.75px;
+}
+
+.helpBox > h2{
+    width: 90%;
+    margin-left: 5%;
+    border-top: 2px solid #b99dee;
+}
+
+.helpBox > h3{
+    border-top: 1px solid #b99dee;
+}
