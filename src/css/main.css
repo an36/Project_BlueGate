@@ -68,23 +68,25 @@ img:hover{
 }
 
 .myCredits{
-    display: inline;
-    position: absolute;
-    z-index: 99;
-    top: 75px;
-    right: 9.3px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    height: 1px;
+    margin-top: 4px;
+    margin-left: 6px;
 }
 
 .myCredits > a{
-    color: white;
+    color: rgb(194, 186, 216);
     text-decoration: none;
     font-size: 14px;
     letter-spacing: 0.7px;
 }
 
 .myCredits > a svg{
-    /* margin-right: 10px; */
     vertical-align: middle;
+    color: rgb(250, 58, 176);
+
 }
 
 .btn{
