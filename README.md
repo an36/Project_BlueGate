@@ -23,7 +23,7 @@
 1. Make sure that both of your Bluetooth and the desired device's Bluetooth is ON.
 2. Add the desired device's UUID in *'Bluetooth Services'* input field (located at top-left corner).
 3. Click the *'Connect'* button to Scan and Connect the desired device.  After a successful connection, you'll see the name of the device on the left column.
-4. To diconnect a device, simply click the <img src="/src/assets/discon.png" width="18" height="18" alt="Clear"> icon next to that device name.
+4. To diconnect a device, simply click the <img src="/src/public/assets/discon.png" width="18" height="18" alt="Clear"> icon next to that device name.
 
 ***NOTE:** Project BlueGate Terminal will allow you to connect to up to 5 devices per browser tab/page.*
 
@@ -32,7 +32,7 @@
 ### II. How to use the Terminal
 - If the connected device allows READs, WRITEs, & NOTIFYs, then you shall see a new Terminal tab (next to 'All' tab) where you can communicate with that device.
 - You can simply send a value (formated as ASCII), to 'All' device or individual ones, by typing it into the terminal's input field and clicking 'Send' or pressing 'Enter' key.
-- You can also clear a terminal by clicking  <img src="/src/assets/trash.png" width="18" height="18" alt="Clear">  and/or change the Terminals colors by clicking  <img src="/src/assets/settings.jpg" width="18" height="18" alt="Clear">.
+- You can also clear a terminal by clicking  <img src="/src/public/assets/trash.png" width="18" height="18" alt="Clear">  and/or change the Terminals colors by clicking  <img src="/src/public/assets/settings.jpg" width="18" height="18" alt="Clear">.
 
 ***NOTE:** The 'All' Terminal will print the values read from all connected devices.  The 'All' Terminal also sends ASCII values to all connected devices, when the user sends a value using the 'All' Terminal.  To send values to individual devices, simply open that device's terminal by clicking its tab and send values from there.*
 
@@ -40,11 +40,11 @@
 
 ### III. How to use Shortcut Buttons
 *The Shortcuts can be used to send a specific value by clicking a Shortcut Button instead of typing that value over and over into the Terminal.*
-1. You can assign a value to Shortcuts by clicking <img src="/src/assets/settings.jpg" width="18" height="18" alt="Clear">.
-2. Clicking <img src="/src/assets/settings.jpg" width="18" height="18" alt="Clear"> will display the settings where you can specify the name (label) and value of each Shortcut.
-3. After that, you can either press the 'Enter' key or click <img src="/src/assets/check.png" width="18" height="18" alt="Clear"> to confirm the desired settings.
+1. You can assign a value to Shortcuts by clicking <img src="/src/public/assets/settings.jpg" width="18" height="18" alt="Clear">.
+2. Clicking <img src="/src/public/assets/settings.jpg" width="18" height="18" alt="Clear"> will display the settings where you can specify the name (label) and value of each Shortcut.
+3. After that, you can either press the 'Enter' key or click <img src="/src/public/assets/check.png" width="18" height="18" alt="Clear"> to confirm the desired settings.
 4. Finally, you can send the specified value of a Shortcut by clicking that Shortcut's Button.
-5. You can also clear and restore the default Shortcuts' settings by clicking <img src="/src/assets/trash.png" width="18" height="18" alt="Clear">.
+5. You can also clear and restore the default Shortcuts' settings by clicking <img src="/src/public/assets/trash.png" width="18" height="18" alt="Clear">.
 
 ***NOTE:** A Shortcut, when clicked, will send its specified value to the open terminal's device.  I.e., if the 'All' terminal is open, then a Shortcut, when clicked, will send its value to all connected devices.  In simpler terms, Shortcuts send their value to the specified (or opened) terminal.*
 
