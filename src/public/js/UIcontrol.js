@@ -104,7 +104,7 @@ function updateDevList(add=0,BLEdev, BLEchar){
 
         let tempDevIndex = dev_name.indexOf(BLEdev.name);
     
-        devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/assets/discon.PNG\" width=\"17\" height=\"17\"></b>Properties: "+curr_properties+"<br><br><br><br></a>";
+        devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/public/assets/discon.PNG\" width=\"17\" height=\"17\"></b>Properties: "+curr_properties+"<br><br><br><br></a>";
         document.getElementsByClassName(BLEdev.id)[0].getElementsByTagName("b")[0].style.color="var(--terminal"+tempDevIndex+"Clr)";
     }
     else{
@@ -231,13 +231,13 @@ function TerminalSettings(e){
 
     if(e.name=="hidden"){
         e.name = "visible";
-        e.src = "/src/assets/check.png";
+        e.src = "/src/public/assets/check.png";
         
         TerminalSettings.style.display = "grid";
     }
     else{
         e.name = "hidden";
-        e.src = "/src/assets/settings.jpg";
+        e.src = "/src/public/assets/settings.jpg";
 
         TerminalSettings.style.display = "none";
     }
@@ -293,7 +293,7 @@ function SCsettings(e){
 
     if(e.name=="hidden"){
         e.name = "visible";
-        e.src = "/src/assets/check.png";
+        e.src = "/src/public/assets/check.png";
         
         for(let i=0; i<SCbuttons.length; i++){
             SCbuttons[i].style.display = "none";
@@ -302,7 +302,7 @@ function SCsettings(e){
     }
     else{
         e.name = "hidden";
-        e.src = "/src/assets/settings.jpg";
+        e.src = "/src/public/assets/settings.jpg";
 
         for(let i=0; i<SCsettings.length; i++){
             SCbuttons[i].style.display = "block";

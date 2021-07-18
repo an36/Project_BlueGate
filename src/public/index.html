@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="//cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.js"></script>
-    <link rel="stylesheet" href="/src/css/main.css">
-    <script type="text/javascript" defer src="/src/js/BLEdevice.js"></script>
-    <script type="text/javascript" defer src="/src/js/UIcontrol.js"></script>
-    <script type="text/javascript" defer src="/src/js/animations.js"></script>
-    <script type="text/javascript" defer src="/src/js/localStoage.js"></script>
+    <link rel="stylesheet" href="/src/public/css/main.css">
+    <script type="text/javascript" defer src="/src/public/js/BLEdevice.js"></script>
+    <script type="text/javascript" defer src="/src/public/js/UIcontrol.js"></script>
+    <script type="text/javascript" defer src="/src/public/js/animations.js"></script>
+    <script type="text/javascript" defer src="/src/public/js/localStoage.js"></script>
     <title>Project BlueGate</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
         <div class="column1">
             <div class="devlist boxes" id="devlist">
                 <div class="devlistInner" id="devlistInner">
-                    <!-- <a class="S14BjWv2Oe1kRSYMm44djw=="><b>SmartCozy<img onclick="disconnectBtn(this);" name="S14BjWv2Oe1kRSYMm44djw==" src="/src/assets/discon.png" width="17" height="17"></b>Properties: Read, Write, Notify<br><br><br><br></a> -->
+                    <!-- <a class="S14BjWv2Oe1kRSYMm44djw=="><b>SmartCozy<img onclick="disconnectBtn(this);" name="S14BjWv2Oe1kRSYMm44djw==" src="/assets/discon.png" width="17" height="17"></b>Properties: Read, Write, Notify<br><br><br><br></a> -->
                 </div>
             </div>
         </div>
@@ -44,8 +44,8 @@
                 <button id="Allbtn" onclick="showAllTerminal();">All</button>
             </div>
             <div id="terminals">
-                <img id="TerminalSettingsbtn" name="hidden" src="/src/assets/settings.jpg" width="18" height="18" alt="Edit Terminal" onclick="TerminalSettings(this)">
-                <img class="clearbtn" src="/src/assets/trash.png" width="18" height="18" alt="Clear Terminal" onclick="clearTerminal();">
+                <img id="TerminalSettingsbtn" name="hidden" src="/src/public/assets/settings.jpg" width="18" height="18" alt="Edit Terminal" onclick="TerminalSettings(this)">
+                <img class="clearbtn" src="/src/public/assets/trash.png" width="18" height="18" alt="Clear Terminal" onclick="clearTerminal();">
                 <div id="TerminalSettings" class="boxes">
                     <label for="TermColor">Terminal:</label>
                     <input type="color" id="TermColor" name="TermColor" value="#000000" oninput="TerminalColors(this)">
@@ -63,8 +63,8 @@
         <div class="column3">
             <div class="shortcuts">
                 <b>Shortcut Buttons:</b>
-                <img id="SCclearbtn" name="SCclear" src="/src/assets/trash.png" width="18" height="18" alt="Clear Shortcuts" onclick="clearSCsettings()">
-                <img id="SCsettingsbtn" name="hidden" src="/src/assets/settings.jpg" width="18" height="18" alt="Edit Shortcuts" onclick="SCsettings(this)">
+                <img id="SCclearbtn" name="SCclear" src="/src/public/assets/trash.png" width="18" height="18" alt="Clear Shortcuts" onclick="clearSCsettings()">
+                <img id="SCsettingsbtn" name="hidden" src="/src/public/assets/settings.jpg" width="18" height="18" alt="Edit Shortcuts" onclick="SCsettings(this)">
                 <div class="shortcutsInner">
                     <button id="SC0" value="" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)" onClick="shortcutClick(this)">SC1</button>
                     <div class="shortcutsInputs boxes" onmouseover="SCRGBshadow(this)" onmouseout="restoreSCShaodw(this)">
@@ -159,22 +159,22 @@
                 <a>1. Make sure that both of your Bluetooth and the desired device's Bluetooth is ON.</a>
                 <a>2. Add the desired device's UUID in <i>'Bluetooth Services'</i> (located at top-left corner).</a>
                 <a>3. Click the Connect button to Scan and Connect the desired device.  After a successful connection, you'll see the name of the device on the left column.</a>
-                <a>4. To diconnect a device, simply click the <img src="/src/assets/discon.png" width="18" height="18" alt="Clear"> icon next to that device name.</a>
+                <a>4. To diconnect a device, simply click the <img src="/src/public/assets/discon.png" width="18" height="18" alt="Clear"> icon next to that device name.</a>
                 <a><i>NOTE: </i>Project BlueGate Terminal will allow you to connect to up to 5 devices per browser tab/page.</a>
                 <h2></h2>
                 <h1><b>II. How to use the Terminal:</b></h1>
                 <a>- If the connected device allows READs, WRITEs, & NOTIFYs, then you shall see a new Terminal tab (next to 'All' tab) where you can communicate with that device.</a>
                 <a>- You can simply send a value (formated as ASCII), to 'All' device or individual ones, by typing it into the terminal's input field and clicking 'Send' or pressing 'Enter' key.</a>
-                <a>- You can also clear a terminal by clicking <img src="/src/assets/trash.png" width="18" height="18" alt="Clear"> and/or change the Terminals colors by clicking <img src="/src/assets/settings.jpg" width="18" height="18" alt="Clear">.</a>
+                <a>- You can also clear a terminal by clicking <img src="/src/public/assets/trash.png" width="18" height="18" alt="Clear"> and/or change the Terminals colors by clicking <img src="/src/public/assets/settings.jpg" width="18" height="18" alt="Clear">.</a>
                 <a>- <i>NOTE: </i>The 'All' Terminal will print the values read from all connected devices.  The 'All' Terminal also sends ASCII values to all connected devices, when the user sends a value using the 'All' Terminal.  To send values to individual devices, simply open that device's terminal by clicking its tab and send values from there.</a>
                 <h2></h2>
                 <h1><b>III. How to use Shortcut Buttons:</b></h1>
                 <a><i>The Shortcuts can be used to send a specific value by clicking a Shortcut Button instead of typing that value over and over into the Terminal.</i></a>
-                <a>1. You can assign a value to Shortcuts by clicking <img src="/src/assets/settings.jpg" width="18" height="18" alt="Clear">.</a>
-                <a>2. Clicking <img src="/src/assets/settings.jpg" width="18" height="18" alt="Clear"> will display the settings where you can specify the name (label) and value of each Shortcut.</a>
-                <a>3. After that, you can either press the 'Enter' key or click <img src="/src/assets/check.png" width="18" height="18" alt="Clear"> to confirm the desired settings.</a>
+                <a>1. You can assign a value to Shortcuts by clicking <img src="/src/public/assets/settings.jpg" width="18" height="18" alt="Clear">.</a>
+                <a>2. Clicking <img src="/src/public/assets/settings.jpg" width="18" height="18" alt="Clear"> will display the settings where you can specify the name (label) and value of each Shortcut.</a>
+                <a>3. After that, you can either press the 'Enter' key or click <img src="/src/public/assets/check.png" width="18" height="18" alt="Clear"> to confirm the desired settings.</a>
                 <a>4. Finally, you can send the specified value of a Shortcut by clicking that Shortcut's Button.</a>
-                <a>5. You can also clear and restore the default Shortcuts' settings by clicking <img src="/src/assets/trash.png" width="18" height="18" alt="Clear">.</a>
+                <a>5. You can also clear and restore the default Shortcuts' settings by clicking <img src="/src/public/assets/trash.png" width="18" height="18" alt="Clear">.</a>
                 <a><i>NOTE: </i>A Shortcut, when clicked, will send its specified value to the open terminal's device.  I.e., if the 'All' terminal is open, then a Shortcut, when clicked, will send its value to all connected devices.  In simpler terms, Shortcuts send their value to the specified (or opened) terminal.</a>
                 <h2></h2>
                 <h1><b>IV. General Notes:</b></h1>
