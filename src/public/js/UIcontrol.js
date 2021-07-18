@@ -104,7 +104,7 @@ function updateDevList(add=0,BLEdev, BLEchar){
 
         let tempDevIndex = dev_name.indexOf(BLEdev.name);
     
-        devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/public/assets/discon.PNG\" width=\"17\" height=\"17\"></b>Properties: "+curr_properties+"<br><br><br><br></a>";
+        devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/public/assets/discon.png\" width=\"17\" height=\"17\"></b>Properties: "+curr_properties+"<br><br><br><br></a>";
         document.getElementsByClassName(BLEdev.id)[0].getElementsByTagName("b")[0].style.color="var(--terminal"+tempDevIndex+"Clr)";
     }
     else{
