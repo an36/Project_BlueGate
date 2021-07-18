@@ -145,17 +145,12 @@ img:hover{
 }
 
 .opServs{
-    /* margin-top: 22px; */
-    /* margin-bottom: 13px; */
-    /* margin-left: 25px; */
-    /* border: 2px solid black; */
     width: fit-content;
     padding: 20px 12.5px;
     padding-bottom: 6px;
 }
 
 #ServsInput{
-    /* background-color:black; */
     padding: 6px 3px;
     margin-right: 5px;
     outline: none;
@@ -296,7 +291,6 @@ img:hover{
 
 #TerminalSettings{
     position: absolute;
-    /* display: grid; */
     display: none;
     grid-template-columns: repeat(2, 1fr);
     background-color: #676299;
@@ -310,7 +304,6 @@ img:hover{
     color: white;
     margin-bottom: 14px;
     margin-left: 10px;
-    /* margin-right: 1px; */
     width: fit-content;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
@@ -345,7 +338,6 @@ img:hover{
     resize: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    /* border: 3px solid var(--terminal1Clr); */
     box-shadow: inset 1px 9px 16px -10px white;
     text-overflow: ellipsis;
     text-align: left;
@@ -367,7 +359,6 @@ img:hover{
     display: flex;
     margin-top: 5px;
     height: auto;
-    /* position: relative; */
 }
 
 .terminalInput Input{
@@ -387,7 +378,6 @@ img:hover{
 
 
 .column3 > div{
-    /* border: 1px solid black; */
     margin-bottom: 5px;
     height: 49.5%;
     width: 100%;
@@ -402,7 +392,6 @@ img:hover{
 .shortcuts > b{
     color: white;
     display: block;
-    /* position: relative; */
     margin: 5px 5px;
 
     text-align:left;
@@ -447,11 +436,9 @@ img:hover{
 }
 
 .shortcutsInner > button{
-    /* display: none; */
     background-color: #6f52ee;
     border: 0;
     outline: border;
-    /* padding: 1.5rem 2rem; */
     transition: all 0.1s;
     cursor: pointer;
     border-radius: 5px;
@@ -502,7 +489,6 @@ img:hover{
     color: #ffffff;
     font-weight: 700;
     text-decoration: none;
-    /* font-style: italic; */
     font-variant: normal;
     text-transform: capitalize;
     line-height: 16px;

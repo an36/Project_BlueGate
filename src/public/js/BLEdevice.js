@@ -35,16 +35,13 @@ function scanBLE(){
             
             return device.gatt.connect();
         })
-        .then(server => {/*console.log(server.device);*/ return server.getPrimaryServices();})
+        .then(server => { return server.getPrimaryServices();})
         .then(services => {
-            // console.log(services);
-    
             for(let i=0; i<services.length; i++){
                 return services[i].getCharacteristics();
             }
         })
         .then(characteristics =>{
-            // console.log(characteristics);
             updateDevList(1, tempDev, characteristics[0]);
             let addedTerm = false;
             for(let i=0; i<characteristics.length; i++){
@@ -55,16 +52,12 @@ function scanBLE(){
                         addedTerm=true;
                     }
                     return BLEChars[conn_devs-1].startNotifications().then(_=>{
-                        // console.log('> Notifications started');
                         BLEChars[conn_devs-1].addEventListener('characteristicvaluechanged', BLEread,true);   //triggers BLEread if data received
-                        // console.log(conn_devs);
                     }).catch(e=>{
                         if(BLEdevice[conn_devs-1].gatt.connected){
                             alert("Characteristic Failure: "+e.message+"\n\nTry adding the desired device's UUID (i.e., 0x1234 or generic_attribute)");
                             BLEdevice[conn_devs-1].gatt.disconnect();
-                            // onDisconnect(BLEdevice[conn_devs-1].id,1);
                         }
-                        console.log("in notification catch");
                     })
                 }
             }
@@ -86,13 +79,11 @@ function scanBLE(){
                         return;
                     }
                     if(tempDev){
-                        console.log("in connect catch");
                         alert("Connection Failure: "+error.message);
                         if(tempDev.gatt.connected){
                             tempDev.gatt.disconnect();
                         }
                         else{
-                            console.log("calling onDisconnect");
                             onDisconnect(tempDev.id,1);
                         }
                     }
@@ -104,7 +95,6 @@ function scanBLE(){
 
 /*Updates the number of connected devices and the list of connected devices when disconnected*/
 function onDisconnect(dev_id,error=0){
-    // console.log("disconnect");
     if(conn_devs>0){
         for(let i=0; i<conn_devs; i++){
             if(BLEdevice[i].id==dev_id){
@@ -130,7 +120,6 @@ function disconnectBtn(e){
     let dev_id = e.name;
     for(let i=0; i<conn_devs; i++){
         if(BLEdevice[i].id==dev_id){
-            console.log(BLEdevice[i].id);
             return BLEdevice[i].gatt.disconnect();
         }
     }
@@ -141,17 +130,14 @@ function disconnectBtn(e){
  * again after 30 milliseconds
  */
 async function writeBLE(data){
-    // console.log(data);
     if(conn_devs>0){
         let encoder = new TextEncoder('utf-8');
 
         if(selectedTermID=="AllTerminal"){
             for(let i=0; i<conn_devs; i++){
                 if(BLEChars[i] && BLEChars[i].properties.notify && BLEChars[i].properties.write){
-                    console.log("BLEChars[i] exists");
                     await BLEChars[i].writeValue(encoder.encode(data))     //writes 'data' to connected device.  if error, then try again after 30ms.
                     .catch((error)=>{
-                        // console.log("in writeBLEindex #36: "+error);
                         setTimeout(async function(){await writeBLE(data);},30);
                     });
                 }
@@ -161,21 +147,17 @@ async function writeBLE(data){
             let tempDevIndex = dev_name.indexOf(selectedTermID);
             await BLEChars[tempDevIndex].writeValue(encoder.encode(data))     //writes 'data' to connected device.  if error, then try again after 30ms.
             .catch((error)=>{
-                // console.log("in writeBLEindex #36: "+error);
                 setTimeout(async function(){await writeBLE(data);},30);
             });
         }
     }
 }
 
-/* This function gets triggered after cBLE notification.
- * This function reads the value sent by connected device
- * and parses the value for Volume Level, number of taps,
- * scanned MAC addresses, and for x,y,z acceleration values.
+/* This function gets triggered after BLE notification.
+ * This function reads the value sent by connected device.
  */
 async function BLEread(event){
     let j;
-    // console.log(event);
     if(conn_devs>0){
         let this_dev_id = event.currentTarget.service.device.id;
         let this_dev_index;
@@ -194,7 +176,6 @@ async function BLEread(event){
             BLEvals[this_dev_index] += String.fromCharCode(BLEChars[this_dev_index].value.getUint8(j)); //convert value to string
         }
             
-        // console.log(BLEvals[this_dev_index]);
         terminalLog(0, dev_name[this_dev_index], new Date().toLocaleTimeString(), dev_name[this_dev_index], BLEvals[this_dev_index])
     }
 }

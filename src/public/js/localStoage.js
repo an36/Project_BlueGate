@@ -15,7 +15,6 @@ if (window.addEventListener) {
 
 window.onload = function(){
     if(!resumePage()){
-    // console.log("newPage() it is...");
         newPage();
     }
     else{
@@ -43,7 +42,6 @@ function newPage(){
 /*stores desired variables and app state on localStorage */
 function savePage(index = undefined, value = undefined){
     if (!supportsLocalStorage()) { return false; }
-    // console.log("in savePage()");
     localStorage.setItem('userInProg', userInProgress);
     
     if((typeof(index) !== 'string') || (value==undefined)){
@@ -59,7 +57,6 @@ function resumePage() {
     if (!supportsLocalStorage()) { return false; }
     userInProgress = parseInt(localStorage.getItem('userInProg')); 
     if (!isInt(userInProgress)) { return false; }
-    // console.log("in resumePage()");
     
     /******load stuff in vars/arrays (as strings) here*******/
     pages = parseInt(localStorage.getItem('pages')); 

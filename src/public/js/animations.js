@@ -127,7 +127,6 @@ function SetRGBCycle(){
 function SCRGBshadow(e){
   e = e || window.event;
   SCbuttons = e
-  // console.log(e);
 }
 
 function restoreSCShaodw(e){

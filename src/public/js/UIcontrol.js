@@ -59,7 +59,6 @@ function addOptionalServs(){
     }
 
     ServsInput.value = "";
-    // console.log(options.optionalServices);
 }
 
 function rmOptionalServs(){
@@ -81,9 +80,6 @@ function rmOptionalServs(){
 
 function updateDevList(add=0,BLEdev, BLEchar){
     let curr_properties = "";
-    // console.log(BLEdev.id);
-    // console.log(BLEdev.name);
-    // console.log(BLEchar.properties);
 
     if(add){
         if(BLEchar.properties.read){
@@ -134,7 +130,6 @@ function addTermTab(device_name, device_id){
 
         for(let i=0; i<TermWindowns.length; i++){
             TermWindowns[i].classList.add("hidden");
-            console.log(i);
         }
 
         let tempDevIndex = dev_name.indexOf(device_name);
@@ -168,7 +163,6 @@ function showAllTerminal(){
 
     for(let i=0; i<TermWindowns.length; i++){
         TermWindowns[i].classList.add("hidden");
-        console.log(i);
     }
 
     selectedTermID = "AllTerminal";
@@ -227,7 +221,6 @@ function TerminalSettings(e){
     e = e || window.event;
 
     let TerminalSettings = document.getElementById("TerminalSettings"); 
-    // let SCsettings = document.getElementsByClassName("shortcutsInputs");
 
     if(e.name=="hidden"){
         e.name = "visible";
@@ -267,7 +260,6 @@ document.body.onclick = function(e){
 function TerminalColors(e){
     e = e || window.event;
     let terminals = terminalWin.getElementsByTagName('textarea');
-    // console.log(terminalWin.getElementsByTagName('textarea'));
     
     if(e.name=="TermColor"){
         for(let i=0; i<terminals.length; i++){
