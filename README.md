@@ -1,8 +1,14 @@
-# Project BlueGate (*an Online Web-Bluetooth Terminal*)
+# [Project BlueGate (*an Online Web-Bluetooth Terminal*)](https://bluegate.herokuapp.com/)
 ***Project BlueGate** is an online Web-Bluetooth Terminal that allows users to connect and communicate with other devices via BLE (Low Energy Bluetooth)*
 
-<div align="center" style="cursor: none">
-<img style="cursor: none" src="https://res.cloudinary.com/dhud5kifu/image/upload/v1626646970/demos/PBG_example_snippet_pn3kkj.png" width="720" height="360" alt="PBG snippet">
+<div align="center">
+<a href="https://bluegate.herokuapp.com/" target="_blank">
+<img src="https://res.cloudinary.com/dhud5kifu/image/upload/v1626646970/demos/PBG_example_snippet_pn3kkj.png" width="720" height="360" alt="PBG snippet">
+</a>
+</div>
+
+<div align="center">
+<sup>Visit Project BlueGate by clicking on the image above or the header title</sup>
 </div>
 
 ---
