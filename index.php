@@ -1,1 +1,1 @@
-<?php include_once("/src/public/index.html"); ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']. '/src/public/index.html'; ?>
