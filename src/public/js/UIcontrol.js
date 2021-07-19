@@ -98,6 +98,10 @@ function updateDevList(add=0,BLEdev, BLEchar){
             curr_properties += "Notify";
         }
 
+        if(conn_devs==1){
+            devlistInner.innerHTML = "";
+        }
+
         let tempDevIndex = dev_name.indexOf(BLEdev.name);
     
         devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/public/assets/discon.png\" width=\"17\" height=\"17\"></b>Properties: "+curr_properties+"<br><br><br><br></a>";
@@ -108,6 +112,9 @@ function updateDevList(add=0,BLEdev, BLEchar){
             let dev_element = document.getElementsByClassName(BLEdev.id);
             while(dev_element.length>0){
                 dev_element[0].parentNode.removeChild(dev_element[0]);
+                if(conn_devs==1){
+                    devlistInner.innerHTML = "<i>No Connected Devices</i>";
+                }
             }
         }
     }
