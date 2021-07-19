@@ -16,6 +16,7 @@ function scanBLE(){
         let tempDev;
         navigator.bluetooth.requestDevice(options)
         .then(device => { 
+            showLoader(1);
             
             for(let i=0; i<conn_devs; i++){
                 if(BLEdevice[i].id==device.id){
@@ -63,6 +64,8 @@ function scanBLE(){
             }
         })
         .catch(error => {
+            showLoader(0);
+            
             if(dup_dev){
                 dup_dev=false;
             }

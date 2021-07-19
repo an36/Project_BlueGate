@@ -106,6 +106,8 @@ function updateDevList(add=0,BLEdev, BLEchar){
     
         devlistInner.innerHTML += "<a class=\""+BLEdev.id+"\"><b>"+BLEdev.name+"<img onclick=\"disconnectBtn(this);\" name=\""+BLEdev.id+"\" src=\"/src/public/assets/discon.png\" width=\"17\" height=\"17\"></b>Properties: "+curr_properties+"<br><br><br><br></a>";
         document.getElementsByClassName(BLEdev.id)[0].getElementsByTagName("b")[0].style.color="var(--terminal"+tempDevIndex+"Clr)";
+
+        showLoader(0);
     }
     else{
         if(BLEdev){
@@ -119,6 +121,16 @@ function updateDevList(add=0,BLEdev, BLEchar){
         }
     }
 
+}
+
+function showLoader(show=0){
+    let loaderContainer = document.getElementsByClassName("loaderContainer");
+    if(show){
+        loaderContainer[0].style.display = "block";
+    }
+    else{
+        loaderContainer[0].style.display = "none";
+    }
 }
 
 function addTermTab(device_name, device_id){
